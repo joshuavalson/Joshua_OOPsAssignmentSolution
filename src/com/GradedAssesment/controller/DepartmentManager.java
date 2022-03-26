@@ -1,16 +1,11 @@
 package com.GradedAssesment.controller;
 import java.util.Scanner;
-
-import com.GradedAssesment.model.AdminDepartment;
-import com.GradedAssesment.model.HrDepartment;
-import com.GradedAssesment.model.TechDepartment;
+import com.GradedAssesment.sevices.driver;
 
 public class DepartmentManager{
 
     public static void main(String[] args) {
-        HrDepartment objHr = new HrDepartment();
-        AdminDepartment objAdmin = new AdminDepartment();
-        TechDepartment objTech = new TechDepartment();
+        driver objDriver = new driver();
         Scanner scanner = new Scanner(System.in);
         boolean exitFlag = false;
 
@@ -26,28 +21,31 @@ public class DepartmentManager{
             switch (choice) {
                 case 1:
                     {
-                        System.out.println("Welcome to "+ objAdmin.departmentName());
-                        System.out.println(objAdmin.getTodaysWork());
-                        System.out.println(objAdmin.getWorkDeadline());
-                        System.out.println(objAdmin.isTodayAHoliday());
+                        System.out.println("Welcome to "+ objDriver.objAdmin.departmentName());
+                        System.out.println(objDriver.objAdmin.getTodaysWork());
+                        System.out.println(objDriver.objAdmin.getWorkDeadline());
+                        System.out.println(objDriver.objAdmin.isTodayAHoliday());
+                        System.out.println("\n");
                     }
                     break;
                 case 2:
                     {
-                        System.out.println("Welcome to "+ objHr.departmentName());
-                        System.out.println(objHr.doActivity());
-                        System.out.println(objHr.getTodaysWork());
-                        System.out.println(objHr.getWorkDeadline());
-                        System.out.println(objHr.isTodayAHoliday());
+                        System.out.println("Welcome to "+ objDriver.objHr.departmentName());
+                        System.out.println(objDriver.objHr.doActivity());
+                        System.out.println(objDriver.objHr.getTodaysWork());
+                        System.out.println(objDriver.objHr.getWorkDeadline());
+                        System.out.println(objDriver.objHr.isTodayAHoliday());
+                        System.out.println("\n");
                     }
                     break;
                 case 3:
                     {
-                        System.out.println("Welcome to "+ objTech.departmentName());
-                        System.out.println(objTech.getTodaysWork());
-                        System.out.println(objTech.getWorkDeadline());
-                        System.out.println(objTech.getTechStackInformation());
-                        System.out.println(objTech.isTodayAHoliday());
+                        System.out.println("Welcome to "+ objDriver.objTech.departmentName());
+                        System.out.println(objDriver.objTech.getTodaysWork());
+                        System.out.println(objDriver.objTech.getWorkDeadline());
+                        System.out.println(objDriver.objTech.getTechStackInformation());
+                        System.out.println(objDriver.objTech.isTodayAHoliday());
+                        System.out.println("\n");
                     }
                     break;  
                 case 4:
@@ -57,7 +55,8 @@ public class DepartmentManager{
                     System.out.println("Invalid Input, please try again");
                     break;
             }
-        }   
+        }
+        scanner.close();   
     
     }
 }
